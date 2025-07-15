@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Contact</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="overlay">
+      <div>
+        <div class="header">
+          <h1 class="logo">My WebSite</h1>
+          <div class="nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Me</a>
+            <a href="experience.html">Experience</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+
+        <div class="section contact">
+          <h2>Get in Touch</h2>
+          <div class="form-box">
+            <form id="contact-form" class="contact-form">
+              <input type="text" name="name" placeholder="Your Name" required />
+              <input type="email" name="email" placeholder="Your Email" required />
+              <textarea name="message" placeholder="Your Message" required></textarea>
+              <button type="submit" class="btn">Send</button>
+            </form>
+            <div id="response" class="response-popup"></div>
+          </div>
+        </div>
+      </div>
+
+      <footer>Made with 🌱 by Allyssa Yasoña | © 2025</footer>
+    </div>
+
+    <script>
+      const scriptURL = "https://script.google.com/macros/s/AKfycbzTP3ulQBKHyn9axy1rwJDEfGrs9H7coeWUhKo0qtaPvrN7saFvi4CWz9hxaHVHTv7rIA/exec";
+      const form = document.getElementById("contact-form");
+      const responseDiv = document.getElementById("response");
+
+      form.addEventListener("submit", e => {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+        const name = formData.get("name");
+
+        const confirmSend = confirm("Do you want to submit this message?");
+        if (!confirmSend) {
+          alert("Submission cancelled.");
+          return;
+        }
+
+        fetch(scriptURL, {
+          method: "POST",
+          body: formData
+        })
+          .then(res => res.json())
+          .then(data => {
+            responseDiv.innerHTML = `
+              <video class="response-video" src="thumbsup.mp4" autoplay muted loop></video>
+              <div class="response-text success">Thank you, ${name}! Your message has been sent.</div>
+            `;
+            form.reset();
+          })
+          .catch(error => {
+            responseDiv.innerHTML = `
+              <video src="sad.mp4" autoplay muted loop></video>
+              <div class="response-text error">Oops! Something went wrong. Please try again.</div>
+            `;
+            console.error("Error!", error.message);
+          });
+      });
+    </script>
+  </body>
+</html>

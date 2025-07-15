@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name=""viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #6ebd82;
+        padding: 20px;
+      }
+
+      .container {
+        background-color: #7db191;
+        padding: 30px;
+        border-radius: 8px;
+        max-width: 600px;
+        margin: auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="number"],
+      select {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0 20px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      .checkbox-group {
+        margin: 10px 0 20px 0;
+      }
+
+      .checkbox-group label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      button {
+        background-color: #abc3d1;
+        color: white;
+        padding: 14px 20px;
+        width: 100%;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form action="resgisform.php">
+      <div class="container">
+        <h1>Registration Form</h1>
+        <p>Please fill this form.</p>
+        <hr />
+
+        <label for="name"><b>Name:</b></label>
+        <input type="text" name="name" id="name" required />
+        <br />
+        <br />
+
+        <label for="email"><b>Email:</b></label>
+        <input type="text" name="email" id="email" required />
+        <br />
+        <br />
+
+        <label for="age"><b>Age:</b></label>
+        <input type="number" name="age" id="age" required />
+        <br />
+        <br />
+
+        <label for="Gender"><b>Gender:</b></label>
+        <select>
+          <option value="female">Female</option>
+          <option value="male">Male</option>
+          <option value="prefer not to say">Prefer Not To Say</option>
+        </select>
+        <br />
+
+        <p><b> Sustainable Development Goals of Interest: </b></p>
+        <div class="checkbox-group">
+          <input type="checkbox" /> Sustainable Development Goal 1: No Poverty
+          <br />
+          <input type="checkbox" /> Sustainable Development Goal 2: Zero Hunger
+          <br />
+          <input type="checkbox" /> Sustainable Development Goal 3: Good Health and Well-being
+          <br />
+          <input type="checkbox" /> Sustainable Development Goal 4: Quality Education
+          <br />
+          <input type="checkbox" /> Sustainable Development Goal 5: Gender Equality
+          <br />
+          <input type="checkbox" /> Sustainable Development Goal 6: Clean Water and Sanitation
+          <br />
+          <input type="checkbox" /> Sustainable Development Goal 7: Affordable and Clean Energy
+          <br />
+          <input type="checkbox" /> Sustainable Development Goal 8: Decent Work and Economic Growth
+          <br />
+          <input type="checkbox" /> Sustainable Development Goal 9: Industry, Innovation and Infrastructure
+          <br />
+          <input type="checkbox" /> Sustainable Development Goal 10: Reduced Inequalities
+          <br />
+          <input type="checkbox" /> Sustainable Development Goal 11: Sustainable Cities and Communities
+          <br />
+          <input type="checkbox" /> Sustainable Development Goal 12: Responsible Consumption and Production
+          <br />
+          <input type="checkbox" /> Sustainable Development Goal 13: Climate Action
+          <br />
+          <input type="checkbox" /> Sustainable Development Goal 14: Life Below Water
+          <br />
+          <input type="checkbox" /> Sustainable Development Goal 15: Life on Land
+          <br />
+          <input type="checkbox" /> Sustainable Development Goal 16: Peace, Justice and Strong Institutions
+          <br />
+          <input type="checkbox" /> Sustainable Development Goal 17: Partnerships for the Goals
+          <br />
+        </div>
+        <hr />
+
+        <button type="button">Submit</button>
+      </div>
+    </form>
+    <a href="index.html" style="position: fixed; bottom: 20px; left: 20px; padding: 10px 15px; background-color: #4ea0cf; color: white; text-decoration: none; border-radius: 5px; font-family: Arial, sans-serif; font-weight: bold">← Back</a>
+  </body>
+</html>

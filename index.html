@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Home | Yasona's Website</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="overlay">
+      <div>
+        <div class="header">
+          <h1 class="logo">My WebSite</h1>
+          <div class="nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Me</a>
+            <a href="experience.html">Resume</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+
+        <button class="color-btn" onclick="changeColor()">🎨 Change Mode</button>
+
+        <div class="section home">
+          <div class="home-box" id="colorBox">
+            <h2>Welcome to My Whimsical Website</h2>
+            <p>This site was made with forest dreams and lots of heart.</p>
+            <p style="margin-top: 20px">I’m an IT student who is currently taking the subject course IT0043</p>
+
+            <div style="margin-top: 40px">
+              <a href="sdg.html" class="btn">🌟 Project 1</a>
+              <a href="periotable.html" class="btn">🌿 Project 2</a>
+              <a href="regisform.html" class="btn">🌼 Project 3</a>
+              <a href="sdginfo.html" class="btn">🍃 Project 4</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>Made with 🌱 by Allyssa Yasoña | © 2025</footer>
+    </div>
+
+    <script>
+      const box = document.getElementById("colorBox");
+      const colors = ["rgba(255, 255, 255, 0.1)", "rgba(255, 228, 225, 0.2)", "rgba(204, 255, 204, 0.2)", "rgba(224, 255, 255, 0.2)", "rgba(255, 250, 205, 0.2)", "rgba(230, 230, 250, 0.2)"];
+      let current = 0;
+
+      function changeColor() {
+        current = (current + 1) % colors.length;
+        box.style.backgroundColor = colors[current];
+      }
+    </script>
+  </body>
+</html>
